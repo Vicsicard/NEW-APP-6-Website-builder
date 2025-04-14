@@ -1,0 +1,49 @@
+{
+  "name": "app6-client-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "publish-content": "tsx src/app/publishing/cli.ts",
+    "retry-failed": "tsx src/app/publishing/cli.ts --include-retry",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "commander": "^11.1.0",
+    "next": "15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
+    "slugify": "^1.6.6",
+    "unified": "^11.0.5",
+    "uuid": "^9.0.1",
+    "vfile": "^6.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/commander": "^2.12.5",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "tailwindcss": "^4",
+    "ts-jest": "^29.3.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5"
+  }
+}

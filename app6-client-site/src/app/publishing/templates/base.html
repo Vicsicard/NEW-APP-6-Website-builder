@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+    header, footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    .blog-post, .video {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .video video {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .contact {
+      background-color: #f9f9f9;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+    }
+    .contact a {
+      color: #000;
+      text-decoration: underline;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .socials a {
+      margin: 0 0.5rem;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    #social-posts {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .social-post {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+
+    .social-post h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .social-post p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .social-post small {
+      display: block;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Content metadata styles */
+    .content-metadata {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .content-metadata p {
+      margin: 0.25rem 0;
+      color: #666;
+    }
+  </style>
+  {{custom_head}}
+</head>
+<body>
+  <div class="content-metadata">
+    <p><strong>Title:</strong> {{title}}</p>
+    <p><strong>Section:</strong> {{section}}</p>
+    <p><strong>Published:</strong> {{publish_date}}</p>
+    <p><strong>Slug:</strong> {{slug}}</p>
+  </div>
+
+  <article class="content">
+    {{content}}
+  </article>
+
+  {{custom_footer}}
+</body>
+</html>
