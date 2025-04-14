@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self Cast Client Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+    header, footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    .blog-post, .video {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .video video {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .contact {
+      background-color: #f9f9f9;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+    }
+    .contact a {
+      color: #000;
+      text-decoration: underline;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .socials a {
+      margin: 0 0.5rem;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    #social-posts {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .social-post {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+
+    .social-post h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .social-post p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .social-post small {
+      display: block;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Jane Doe</h1>
+    <p>Storyteller. Strategist. Self Cast Client.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <!-- WS INSTRUCTION: Inject rendered bio HTML content here if available -->
+    {{rendered_bio_html}}
+  </section>
+
+  <section id="blog">
+    <h2>Featured Blog Posts</h2>
+
+    <!-- WS INSTRUCTION:
+         Inject each rendered blog post HTML block here.
+         Pull from Supabase Storage: /published_content/blog/*.html
+         Each blog post should be full HTML with appropriate styles and metadata embedded.
+    -->
+    {{rendered_blog_post_1}}
+    {{rendered_blog_post_2}}
+  </section>
+
+  <section id="videos">
+    <h2>Shortform Videos</h2>
+    <div class="video">
+      <video controls src="videos/highlight1.mp4"></video>
+      <p>🔥 30-second reel about purpose-driven pivots</p>
+    </div>
+    <div class="video">
+      <video controls src="videos/highlight2.mp4"></video>
+      <p>💬 Quick insight into personal branding from lived experience</p>
+    </div>
+  </section>
+
+  <section id="social-posts">
+    <h2>Social Media Highlights</h2>
+
+    <!-- WS INSTRUCTION:
+         Dynamically load and inject recent social media posts from the Supabase content table.
+         Use:
+         - section = 'social'
+         - status = 'published'
+         - platforms = ['linkedin', 'twitter', 'instagram']
+         Each post should use the .social-post layout below:
+    -->
+
+    <div class="social-post">
+      <h3>LinkedIn</h3>
+      <p>"Visibility isn't vanity. It's strategy..."</p>
+      <small>Posted on LinkedIn</small>
+    </div>
+
+    <div class="social-post">
+      <h3>Twitter/X</h3>
+      <p>"Your story is your leverage..."</p>
+      <small>Tweet by @JaneDoe</small>
+    </div>
+
+    <div class="social-post">
+      <h3>Instagram</h3>
+      <p>"✨ From chaos to clarity..."</p>
+      <small>@janedoe • 1,242 likes</small>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let’s Connect</h2>
+    <p>Interested in working together or just want to say hi?</p>
+    <p>Email me at <a href="mailto:hello@janedoe.com">hello@janedoe.com</a></p>
+    <div class="socials">
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </div>
+  </section>
+
+  <footer class="mt-16 px-6 py-8 border-t border-gray-300 bg-white text-center">
+    <p class="text-sm text-gray-600 mb-4">
+      Connect with {{client_name}}
+    </p>
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="{{linkedin_url}}" target="_blank" aria-label="LinkedIn">
+        <img src="/icons/linkedin.svg" alt="LinkedIn" class="h-6 w-6 hover:opacity-80" />
+      </a>
+      <a href="{{twitter_url}}" target="_blank" aria-label="Twitter/X">
+        <img src="/icons/twitter.svg" alt="Twitter" class="h-6 w-6 hover:opacity-80" />
+      </a>
+      <a href="{{instagram_url}}" target="_blank" aria-label="Instagram">
+        <img src="/icons/instagram.svg" alt="Instagram" class="h-6 w-6 hover:opacity-80" />
+      </a>
+    </div>
+    <p class="text-xs text-gray-400">
+      &copy; {{current_year}} {{client_name}}. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

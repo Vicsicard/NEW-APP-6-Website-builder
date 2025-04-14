@@ -9,7 +9,8 @@
     "lint": "next lint",
     "publish-content": "tsx src/app/publishing/cli.ts",
     "retry-failed": "tsx src/app/publishing/cli.ts --include-retry",
-    "test": "jest"
+    "test": "jest",
+    "build-site": "tsx scripts/build-site.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",

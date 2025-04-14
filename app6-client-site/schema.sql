@@ -20,7 +20,16 @@ CREATE TABLE IF NOT EXISTS content (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT valid_status CHECK (status IN ('draft', 'published')),
-  CONSTRAINT valid_section CHECK (section IN ('bio', 'blog'))
+  CONSTRAINT valid_section CHECK (section IN (
+    'bio',           -- Short bio content
+    'blog',          -- Blog posts
+    'facebook',      -- Facebook posts
+    'twitter',       -- Twitter posts
+    'instagram',     -- Instagram posts
+    'linkedin',      -- LinkedIn posts
+    'website',       -- Website content
+    'story'          -- Story content
+  ))
 );
 
 -- Create videos table
@@ -53,6 +62,6 @@ ON CONFLICT DO NOTHING;
 
 INSERT INTO videos (video_url, caption, status)
 VALUES 
-  ('/videos/highlight1.mp4', '🔥 30-second reel about purpose-driven pivots', 'published'),
-  ('/videos/highlight2.mp4', '💬 Quick insight into personal branding from lived experience', 'published')
+  ('/videos/highlight1.mp4', ' 30-second reel about purpose-driven pivots', 'published'),
+  ('/videos/highlight2.mp4', ' Quick insight into personal branding from lived experience', 'published')
 ON CONFLICT DO NOTHING;

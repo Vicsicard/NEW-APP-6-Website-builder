@@ -66,19 +66,52 @@ app6-client-site/
 
 ## Database Schema
 
+### Tables
+
 1. client_profile
    - Profile information
    - Social media links
 
 2. content
-   - Bio and blog posts
+   - Section-based content organization:
+     - 'bio': Professional biography
+     - 'blog': Blog posts
+     - 'website': Main website content
+     - 'facebook': Facebook posts
+     - 'twitter': Twitter content
+     - 'instagram': Instagram posts
+     - 'linkedin': LinkedIn articles
+     - 'story': Story content
    - Status: draft/published/failed
-   - Metadata for publishing
+   - Metadata: title, platform (for social), tags
+   - Content validation through section constraints
 
 3. videos
    - Short-form video content
    - Status tracking
    - Platform information
+
+### Content Organization
+
+Each content type is stored with its specific section:
+
+1. **Website Content** (`section: 'website'`)
+   - Main website pages and sections
+   - Example: "Annie's Leadership Coaching Website"
+
+2. **Bio Content** (`section: 'bio'`)
+   - Professional biography
+   - Example: "Annie's Short Bio"
+
+3. **Blog Posts** (`section: 'blog'`)
+   - Long-form articles
+   - Example: "Finding Your Authentic Path: A Journey of Self-Discovery"
+
+4. **Social Media Content**
+   - Facebook (`section: 'facebook'`): "Finding Your Authentic Path: A Leadership Journey"
+   - Twitter (`section: 'twitter'`): "Authentic Leadership Thread: Key Insights"
+   - Instagram (`section: 'instagram'`): "Your Authentic Leadership Journey: Visual Guide"
+   - LinkedIn (`section: 'linkedin'`): "The Power of Authentic Leadership: Professional Insights"
 
 ## Getting Started
 
